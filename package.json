@@ -23,13 +23,10 @@
     "test:watch": "vitest watch"
   },
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=18.0.0 || 14.21.1 || 14.17.5"
   },
   "lint-staged": {
-    "./src/**/*.{ts,js,jsx,tsx}": [
-      "eslint --ignore-path .gitignore --fix",
-      "prettier --ignore-path .gitignore --write"
-    ]
+    "./src/**/*.{ts,js,jsx,tsx}": []
   },
   "dependencies": {
     "gatsby": "5.2.0",
@@ -47,6 +44,7 @@
     "@testing-library/jest-dom": "5.16.5",
     "@testing-library/react": "13.4.0",
     "@testing-library/react-hooks": "8.0.1",
+    "@trussworks/react-uswds": "4.0.0",
     "@types/node": "18.11.9",
     "@types/react": "18.0.25",
     "@types/react-dom": "18.0.9",
@@ -54,6 +52,7 @@
     "@typescript-eslint/eslint-plugin": "5.45.0",
     "@typescript-eslint/parser": "5.45.0",
     "@vitejs/plugin-react": "2.2.0",
+    "babel-eslint": "10.1.0",
     "babel-preset-gatsby": "3.2.0",
     "c8": "7.12.0",
     "eslint": "8.28.0",
