@@ -1,13 +1,8 @@
 import { render } from '@testing-library/react';
-import { LocalizedComponent } from '../../test/testHelpers';
 import BetaBanner from './BetaBanner';
 
 describe(`rendering of the BetaBanner`, () => {
-  const { asFragment } = render(
-    <LocalizedComponent>
-      <BetaBanner />
-    </LocalizedComponent>,
-  );
+  const { asFragment } = render(<BetaBanner />);
 
   it(`checks if component renders`, () => {
     expect(asFragment()).toMatchSnapshot();

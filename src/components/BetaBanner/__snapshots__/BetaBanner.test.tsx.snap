@@ -1,0 +1,11 @@
+// Vitest Snapshot v1
+
+exports[`rendering of the BetaBanner > checks if component renders 1`] = `
+<DocumentFragment>
+  <div>
+    <div>
+      This is a new tool.
+    </div>
+  </div>
+</DocumentFragment>
+`;
