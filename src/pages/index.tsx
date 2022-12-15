@@ -1,3 +1,4 @@
+import BetaBanner from '@/components/BetaBanner';
 import {
   Accordion,
   Alert,
@@ -100,6 +101,7 @@ const IndexPage = () => {
   return (
     <>
       <GovBanner></GovBanner>
+      <BetaBanner></BetaBanner>
       <SummaryBox>
         <SummaryBoxHeading headingLevel="h3">Key Information</SummaryBoxHeading>
         <SummaryBoxContent>{`testing content`}</SummaryBoxContent>

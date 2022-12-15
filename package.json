@@ -20,7 +20,8 @@
     "format": "prettier --ignore-path .gitignore \"src/**/*.+(ts|js|tsx)\" --write",
     "postinstall": "husky install",
     "test": "vitest",
-    "test:watch": "vitest watch"
+    "test:watch": "vitest watch",
+    "gc": "node .generate_component $1"
   },
   "engines": {
     "node": ">=18.0.0 || 14.21.1 || 14.17.5"
@@ -29,10 +30,13 @@
     "./src/**/*.{ts,js,jsx,tsx}": []
   },
   "dependencies": {
+    "@uswds/uswds": "3.3.0",
     "gatsby": "5.2.0",
     "gatsby-plugin-pnpm": "1.2.10",
+    "gatsby-plugin-sass": "6.3.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "sass": "1.56.2",
     "tsconfig-paths-webpack-plugin": "4.0.0"
   },
   "devDependencies": {

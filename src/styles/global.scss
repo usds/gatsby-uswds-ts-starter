@@ -1,3 +1,28 @@
+@use "uswds-core" with (
+    $theme-image-path: "../uswds/img",
+    $theme-font-path: "../uswds/fonts",
+    $theme-show-compile-warnings: false,
+    $theme-show-notifications: false,
+    $theme-focus-color: "blue-50v",
+    $theme-global-paragraph-styles: true,
+    $theme-global-link-styles: true,
+    $theme-global-content-styles: true,
+    $theme-utility-breakpoints: (
+      "card": false,
+      "card-lg": true,
+      "mobile": true,
+      "mobile-lg": true,
+      "tablet": true,
+      "tablet-lg": true,
+      "desktop": true,
+      "desktop-lg": true,
+      "widescreen": true
+    ),
+  );
+
+// Documentation states that this next line is needed, however it cause the build to break
+// @forward 'uswds'; 
+
 @import "~@trussworks/react-uswds/lib/index.css";
 
 /**
