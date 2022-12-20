@@ -4,12 +4,12 @@
 
 <br />
 
-<div align="center"><strong>Non-opinionated TypeScript starter for Gatsby</strong></div>
-<div align="center">A TypeScript starter for Gatsby. No plugins and styling. Exactly the necessary to start.</div>
+<div align="center"><strong>Opinionated TypeScript starter for Gatsby</strong></div>
+<div align="center">A TypeScript starter for Gatsby that works with Trussworks components, USWDS SASS and i18n</div>
 
 <br />
 
-<div align="center">
+<!-- <div align="center">
   <img src="https://img.shields.io/static/v1?label=PRs&message=welcome&style=flat-square&color=5e17eb&labelColor=000000" alt="PRs welcome!" />
 
   <img alt="License" src="https://img.shields.io/github/license/jpedroschmitz/gatsby-starter-ts?style=flat-square&color=5e17eb&labelColor=000000">
@@ -17,11 +17,7 @@
   <a href="https://twitter.com/intent/follow?screen_name=jpedroschmitz">
     <img src="https://img.shields.io/twitter/follow/jpedroschmitz?style=flat-square&color=5e17eb&labelColor=000000" alt="Follow @jpedroschmitz" />
   </a>
-</div>
-
-<div align="center">
-  <sub>Created by <a href="https://twitter.com/jpedroschmitz">João Pedro</a> with the help of many <a href="https://github.com/jpedroschmitz/gatsby-starter-ts/graphs/contributors">wonderful contributors</a>.</sub>
-</div>
+</div> -->
 
 <br />
 
@@ -36,7 +32,7 @@
 - 🐶 Husky — For running scripts before committing
 - 🚓 Commitlint — To make sure your commit messages follow the convention
 - 🖌 Renovate — To keep your dependencies up to date
-- 🚫 lint-staged — Run ESLint and Prettier against staged Git files
+- 🚫 lint-staged — Run ESLint and Prettier against staged Git files (under development)
 - 👷 PR Workflow — Run Type Check & Linters on Pull Requests
 - ⚙️ EditorConfig - Consistent coding styles across editors and IDEs
 - 🗂 Path Mapping — Import components or images using the `@` prefix
@@ -104,3 +100,10 @@ This starter uses pnpm by default, but this choice is yours. If you'd like to sw
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for more information.
+
+## USDS Specific
+- works with [trusswork](https://trussworks.github.io/react-uswds/) components
+- can use [USWDS tokens](https://designsystem.digital.gov/design-tokens/) as mixins in sass modules (at component level)
+- works with i18n using [format.js (react-intl)](https://formatjs.io/docs/react-intl/api)
+- has a generator script to quickly create components
+
