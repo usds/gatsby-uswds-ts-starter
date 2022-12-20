@@ -1,0 +1,6 @@
+{
+  "common.pages.alerts.banner.beta.content": {
+    "defaultMessage": "<bold1>This tool has been updated.</bold1> The 1.0 version of the tool was released on {relDate}.",
+    "description": "Alert body that appears on landing page."
+  }
+}

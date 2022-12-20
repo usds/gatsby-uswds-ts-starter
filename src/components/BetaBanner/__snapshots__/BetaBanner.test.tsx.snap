@@ -4,7 +4,10 @@ exports[`rendering of the BetaBanner > checks if component renders 1`] = `
 <DocumentFragment>
   <div>
     <div>
-      This is a new tool.
+      <strong>
+        This tool has been updated.
+      </strong>
+       The 1.0 version of the tool was released on Nov 22, 2022.
     </div>
   </div>
 </DocumentFragment>

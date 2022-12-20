@@ -1,4 +1,5 @@
 import type { GatsbyConfig } from 'gatsby';
+import path from 'path';
 
 const config: GatsbyConfig = {
   // Since `gatsby-plugin-typescript` is automatically included in Gatsby you
@@ -14,6 +15,19 @@ const config: GatsbyConfig = {
             `./node_modules/@uswds/uswds/packages`,
           ],
         },
+      },
+    },
+    {
+      resolve: `gatsby-plugin-intl`,
+      options: {
+        // language JSON resource path
+        path: path.join(__dirname, `src`, `intl`),
+        // supported language
+        languages: [`en`, `es`],
+        // language file path
+        defaultLanguage: `en`,
+        // option to redirect to `/en` when connecting `/`
+        redirect: true,
       },
     },
   ],
