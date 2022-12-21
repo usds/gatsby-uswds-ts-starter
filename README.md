@@ -116,3 +116,10 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 - `pnmp run format`
 - `pnmp run test`
 - `pnmp run intl:extract`
+
+## Credits
+
+
+<div>
+  Original repo created by <a href="https://twitter.com/jpedroschmitz">João Pedro</a> with the help of many <a href="https://github.com/jpedroschmitz/gatsby-starter-ts/graphs/contributors">wonderful contributors</a>. Shout out from USDS!
+</div>
