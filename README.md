@@ -42,16 +42,19 @@
 The best way to start with this template is using the [Gatsby CLI](https://www.gatsbyjs.com/docs/reference/gatsby-cli/).
 
 ```
-npx gatsby new starter-ts https://github.com/jpedroschmitz/gatsby-starter-ts
+git clone https://github.com/usds/gastby-uswds-ts-starter.git your-project-name
 ```
 
 ### Development
 
-To start the project locally, run:
+To start the project locally:
 
-```bash
-pnpm start
-```
+1. Git clone the starter repo (above)
+2. open `your-project-name` in VS Code
+3. Open a terminal in VS Code. Check your node version using `node -v`
+4. If you don't have node 18, install and verify that `node -v` return 18.x
+5. run `pnpm install`
+6. run `pnpm clean && pnpm start`
 
 Open `http://localhost:8000` with your browser to see the result.
 
