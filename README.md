@@ -107,3 +107,9 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 - works with i18n using [format.js (react-intl)](https://formatjs.io/docs/react-intl/api)
 - has a generator script to quickly create components
 
+### Before each commit run the following:
+- `pnmp run type-check`
+- `pnmp run lint`
+- `pnmp run format`
+- `pnmp run test`
+- `pnmp run intl:extract`
