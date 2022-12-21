@@ -1,8 +1,8 @@
-import BetaBanner from '@/components/BetaBanner';
+import Layout from '@/components/Layout';
+import MainGridContainer from '@/components/MainGridContainer';
 import {
   Accordion,
   Alert,
-  GovBanner,
   SummaryBox,
   SummaryBoxContent,
   SummaryBoxHeading,
@@ -99,22 +99,24 @@ const IndexPage = () => {
     },
   ];
   return (
-    <>
-      <GovBanner></GovBanner>
-      <BetaBanner></BetaBanner>
-      <SummaryBox>
-        <SummaryBoxHeading headingLevel="h3">Key Information</SummaryBoxHeading>
-        <SummaryBoxContent>{`testing content`}</SummaryBoxContent>
-      </SummaryBox>
-      <Alert type="info" heading="Success status" headingLevel="h4">
-        {`Testing`}
-      </Alert>
-      <Accordion items={testItems} />
-      <h1>Test</h1>
-    </>
+    <Layout>
+      <MainGridContainer>
+        <h1>First Page</h1>
+        <SummaryBox>
+          <SummaryBoxHeading headingLevel="h3">
+            Key Information
+          </SummaryBoxHeading>
+          <SummaryBoxContent>{`testing content`}</SummaryBoxContent>
+        </SummaryBox>
+        <Alert type="info" heading="Success status" headingLevel="h4">
+          {`Testing`}
+        </Alert>
+        <Accordion items={testItems} />
+      </MainGridContainer>
+    </Layout>
   );
 };
 
-export const Head = () => <title>Explore the tool</title>;
+export const Head = () => <title>First page</title>;
 
 export default IndexPage;

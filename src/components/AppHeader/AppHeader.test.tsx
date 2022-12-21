@@ -1,14 +1,13 @@
 import { render } from '@testing-library/react';
-import BetaBanner from './BetaBanner';
 import { IntlProviderTestWrapper } from '@/test/testHelpers';
+import AppHeader from './AppHeader';
 
-describe(`rendering of the BetaBanner`, () => {
+describe(`rendering of AppHeader Component`, () => {
   const { asFragment } = render(
     <IntlProviderTestWrapper>
-      <BetaBanner />
+      <AppHeader />
     </IntlProviderTestWrapper>,
   );
-
   it(`checks if component renders`, () => {
     expect(asFragment()).toMatchSnapshot();
   });

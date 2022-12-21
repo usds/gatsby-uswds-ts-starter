@@ -1,8 +1,6 @@
 
 // component.tsx
-exports.component = name => `import React from 'react';
-
-import * as styles from './${name}.module.scss';
+exports.component = name => `import * as styles from './${name}.module.scss';
 
 export interface I${name}Props {}
 
@@ -18,7 +16,7 @@ export default ${name};
 `;
 
 // component.module.scss
-exports.sass = name => `@use '../../styles/design-system.scss' as *;
+exports.sass = name => `@use "uswds-core" as *;
 
 .${name[0].toLowerCase() + name.slice(1)}Container{
 
@@ -41,16 +39,15 @@ declare const ${name}ScssModule: ${name}Namespace.I${name}Scss & {
 `;
 
 // component.test.tsx
-exports.test = name => `import React from 'react';
-import { render } from '@testing-library/react';
-import {LocalizedComponent} from '../../test/testHelpers';
+exports.test = name => `import { render } from '@testing-library/react';
+import {IntlProviderTestWrapper} from '@/test/testHelpers';
 import ${name} from './${name}';
 
 describe('rendering of ${name} Component', () => {
     const {asFragment} = render(
-        <LocalizedComponent>
+        <IntlProviderTestWrapper>
           <${name} />
-        </LocalizedComponent>,
+        </IntlProviderTestWrapper>,
     );
     it('checks if component renders', () => {
       expect(asFragment()).toMatchSnapshot();
