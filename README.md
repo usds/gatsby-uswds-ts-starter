@@ -51,10 +51,23 @@ To start the project locally:
 
 1. Git clone the starter repo (above)
 2. open `your-project-name` in VS Code
-3. Open a terminal in VS Code. Check your node version using `node -v`
-4. If you don't have node 18, install and verify that `node -v` return 18.x
-5. run `pnpm install`
-6. run `pnpm clean && pnpm start`
+3. If you don't have node 18, install and verify that `node -v` return 18.x. You can use `nvm` or `asdf`
+4. run `nvm use 18`
+5. run `code .`
+6. After VS code opens, open a terminal
+7. Check your node version using `node -v`
+8. Ensure that `pnpm` and `gatsby-cli` are globally installed:
+
+```
+$ npm list -g --depth=0
+/Users/username/.nvm/versions/node/v18.12.1/lib
+├── corepack@0.14.2
+├── gatsby-cli@5.2.0
+├── npm@8.19.2
+└── pnpm@7.18.2
+```
+8. run `pnpm install`
+8. run `pnpm clean && pnpm start`
 
 Open `http://localhost:8000` with your browser to see the result.
 
