@@ -1,0 +1,28 @@
+// Vitest Snapshot v1
+
+exports[`rendering of SEO Component > checks if component renders 1`] = `
+<DocumentFragment>
+  <meta
+    charset="utf-8"
+  />
+  <meta
+    content="IE=edge; chrome=1"
+    http-equiv="X-UA-Compatible"
+  />
+  <title>
+    Page Title
+  </title>
+  <meta
+    content="Site Name"
+    property="og:site_name"
+  />
+  <meta
+    content="Page Title"
+    property="og:title"
+  />
+  <meta
+    content="Description of this web page"
+    property="og:description"
+  />
+</DocumentFragment>
+`;

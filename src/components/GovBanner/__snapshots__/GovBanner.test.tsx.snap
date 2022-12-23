@@ -157,6 +157,9 @@ exports[`rendering of GovBanner Component > checks if component renders 1`] = `
           </div>
         </div>
       </section>
+      <nav>
+        <ul />
+      </nav>
     </div>
   </div>
 </DocumentFragment>

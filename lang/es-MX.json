@@ -1,0 +1,17 @@
+{
+    "languages.es-MX": "ES",
+    "languages.en-US": "EN",
+    "common.nav.links.ONE": "Primera pagina",
+    "common.nav.links.THREE": "Tercera pagina",
+    "common.nav.links.TWO": "Segundo pagina",
+    "common.nav.LOGO_TITLE": "El título de su logo va aquí",
+    "first.page.copy.HEADING1": "Primera pagina",
+    "first.page.copy.SUMMARY_CONTENT": "Resumen del contenido de la página 1",
+    "first.page.copy.SUMMARY_TITLE": "Información clave",
+    "second.page.copy.HEADING1": "Segundo pagina",
+    "second.page.copy.SUMMARY_CONTENT": "Resumen del contenido de la página 2",
+    "second.page.copy.SUMMARY_TITLE": "Información clave",
+    "third.page.copy.HEADING1": "Tercera pagina",
+    "third.page.copy.SUMMARY_CONTENT": "Resumen del contenido de la página 2",
+    "third.page.copy.SUMMARY_TITLE": "Información clave"
+}

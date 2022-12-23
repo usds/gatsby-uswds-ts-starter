@@ -1,0 +1,56 @@
+{
+  "languages.es-MX": "ES",
+  "languages.en-US": "EN",
+  "common.nav.LOGO_TITLE": {
+    "defaultMessage": "Your logo title goes here",
+    "description": "Navigate to any page. This is LOGO_TITLE in the header"
+  },
+  "common.nav.links.ONE": {
+    "defaultMessage": "First page",
+    "description": "the first nav link"
+  },
+  "common.nav.links.THREE": {
+    "defaultMessage": "Third page",
+    "description": "the third nav link"
+  },
+  "common.nav.links.TWO": {
+    "defaultMessage": "Second page",
+    "description": "the second nav link"
+  },
+  "first.page.copy.HEADING1": {
+    "defaultMessage": "First Page",
+    "description": "page heading"
+  },
+  "first.page.copy.SUMMARY_CONTENT": {
+    "defaultMessage": "Summary content for page 1",
+    "description": "summary title"
+  },
+  "first.page.copy.SUMMARY_TITLE": {
+    "defaultMessage": "Key Information",
+    "description": "summary title"
+  },
+  "second.page.copy.HEADING1": {
+    "defaultMessage": "Second Page",
+    "description": "page heading"
+  },
+  "second.page.copy.SUMMARY_CONTENT": {
+    "defaultMessage": "Summary content for page 2",
+    "description": "summary title"
+  },
+  "second.page.copy.SUMMARY_TITLE": {
+    "defaultMessage": "Key Information",
+    "description": "summary title"
+  },
+  "third.page.copy.HEADING1": {
+    "defaultMessage": "Third Page",
+    "description": "page heading"
+  },
+  "third.page.copy.SUMMARY_CONTENT": {
+    "defaultMessage": "Summary content for page 3",
+    "description": "summary title"
+  },
+  "third.page.copy.SUMMARY_TITLE": {
+    "defaultMessage": "Key Information",
+    "description": "summary title"
+  }
+}
