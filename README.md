@@ -109,14 +109,6 @@ import { Button } from '@/components/Button';
 import avatar from '@/static/avatar.png';
 ```
 
-### Switch to Yarn/npm
-
-This starter uses pnpm by default, but this choice is yours. If you'd like to switch to Yarn/npm, delete the `pnpm-lock.yaml` file, install the dependencies with Yarn/npm, change the CI workflow, Husky Git hooks to use Yarn/npm commands, and uninstall the `gatsby-plugin-pnpm` plugin (you also need to remove it from the `gatsby-config` file).
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for more information.
-
 ## USDS Specific
 - works with [trusswork](https://trussworks.github.io/react-uswds/) components
 - can use [USWDS tokens](https://designsystem.digital.gov/design-tokens/) as mixins in sass modules (at component level)
@@ -129,6 +121,21 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 - `pnmp run format`
 - `pnmp run test`
 - `pnmp run intl:extract`
+
+## i18n
+
+The steps involved with creating i18n content is as follows:
+
+1. Use `react-intl` as demonstrated in various pages and/or components.
+1. When new content is added, run `pnpm intl:extract`. This will update the json object in `lang/en-US-extract.json`.
+2. Run `pnpm intl:createEnJson`. This will modify the extracted JSON file into an AST that the library expects and remove console errors.
+3. Run `pnpm intl:format`. This will format all the files in the `lang` folder using prettier.
+4. Translate the `en-US.json` file to an `es-MX.json` file to provide language support.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for more information.
+
 
 ## Credits
 
