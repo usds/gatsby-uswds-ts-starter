@@ -2,6 +2,7 @@ declare namespace GovBannerNamespace {
   export interface IGovBannerScss {
     fullScreenContainer: string;
     bannerContainer: string;
+    langSwitcher: string;
   }
 }
 

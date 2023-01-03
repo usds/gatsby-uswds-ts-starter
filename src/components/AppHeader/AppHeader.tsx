@@ -1,5 +1,7 @@
 import { useState } from 'react';
-import { Link } from 'gatsby-plugin-intl';
+import { defineMessages, FormattedMessage, useIntl } from 'react-intl';
+import { LocalizedLink } from 'gatsby-plugin-i18n-l10n';
+
 import {
   Header,
   NavMenuButton,
@@ -9,12 +11,9 @@ import {
 import MainGridContainer from '@/components/MainGridContainer';
 import GovBanner from '@/components/GovBanner';
 
-// import Language from '../Language';
-
 // @ts-ignore
 import siteLogo from '@/static/images/usds-logo.png';
 import * as styles from './AppHeader.module.scss';
-import { HEADER } from '@/data/copy/common';
 import { PAGES_ENDPOINTS } from '@/data/constants';
 
 /**
@@ -29,6 +28,8 @@ import { PAGES_ENDPOINTS } from '@/data/constants';
  * @return {JSX.Element}
  */
 const AppHeader = () => {
+  const intl = useIntl();
+
   /**
    * State variable to control the toggling of mobile menu button
    */
@@ -37,35 +38,62 @@ const AppHeader = () => {
     setMobileNavOpen((prevOpen) => !prevOpen);
   };
 
+  const HEADER = {
+    LOGO_TITLE: (
+      <FormattedMessage
+        id={`common.nav.LOGO_TITLE`}
+        defaultMessage={`Your logo title goes here`}
+        description={`Navigate to any page. This is LOGO_TITLE in the header`}
+      />
+    ),
+  };
   // Logo text
   const logoLine1 = HEADER.LOGO_TITLE;
 
+  const NAV_LINKS_COPY = defineMessages({
+    ONE: {
+      id: `common.nav.links.ONE`,
+      defaultMessage: `First page`,
+      description: `the first nav link`,
+    },
+    TWO: {
+      id: `common.nav.links.TWO`,
+      defaultMessage: `Second page`,
+      description: `the second nav link`,
+    },
+    THREE: {
+      id: `common.nav.links.THREE`,
+      defaultMessage: `Third page`,
+      description: `the third nav link`,
+    },
+  });
+
   // Navigation links for app
   const navLinks = [
-    <Link
+    <LocalizedLink
       to={PAGES_ENDPOINTS.FIRST}
       key={`index-page`}
       activeClassName="usa-current"
       data-cy={`nav-link-index-page`}
     >
-      {HEADER.FIRST_PAGE}
-    </Link>,
-    <Link
+      {intl.formatMessage(NAV_LINKS_COPY.ONE)}
+    </LocalizedLink>,
+    <LocalizedLink
       to={PAGES_ENDPOINTS.SECOND}
       key={`second-page`}
       activeClassName="usa-current"
       data-cy={`nav-link-second-page`}
     >
-      {HEADER.SECOND_PAGE}
-    </Link>,
-    <Link
+      {intl.formatMessage(NAV_LINKS_COPY.TWO)}
+    </LocalizedLink>,
+    <LocalizedLink
       to={PAGES_ENDPOINTS.THIRD}
       key={`third-page`}
       activeClassName="usa-current"
       data-cy={`nav-link-third-page`}
     >
-      {HEADER.THIRD_PAGE}
-    </Link>,
+      {intl.formatMessage(NAV_LINKS_COPY.THREE)}
+    </LocalizedLink>,
     // Temporarily removing language link until translation is completed
     // <div key={'language'}>
     //   <Language isDesktop={false}/>
@@ -82,7 +110,7 @@ const AppHeader = () => {
         <Grid className={styles.logoNavRow} row>
           {/* Logo */}
           <Grid col={1}>
-            <Link
+            <LocalizedLink
               to={PAGES_ENDPOINTS.FIRST}
               key={`first-page`}
               data-cy={`nav-link-first-page`}
@@ -92,19 +120,19 @@ const AppHeader = () => {
                 src={siteLogo}
                 alt={`${logoLine1}`}
               />
-            </Link>
+            </LocalizedLink>
           </Grid>
 
           {/* Logo Title */}
           <Grid col={6}>
-            <Link
+            <LocalizedLink
               to={PAGES_ENDPOINTS.FIRST}
               key={`first-page`}
               className="remove-link-style"
               data-cy={`nav-link-first-page`}
             >
               <div className={styles.logoTitle}>{logoLine1}</div>
-            </Link>
+            </LocalizedLink>
           </Grid>
 
           {/* Nav links */}
@@ -115,6 +143,7 @@ const AppHeader = () => {
               label="Menu"
             ></NavMenuButton>
             <PrimaryNav
+              className="primary-nav"
               items={navLinks}
               mobileExpanded={mobileNavOpen}
               onToggleMobileNav={toggleMobileNav}

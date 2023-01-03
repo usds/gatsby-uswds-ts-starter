@@ -1,14 +1,22 @@
 import { render } from '@testing-library/react';
-import { IntlProviderTestWrapper } from '@/test/testHelpers';
+import { IntlProvider } from 'react-intl';
 import AppHeader from './AppHeader';
 
 describe(`rendering of AppHeader Component`, () => {
-  const { asFragment } = render(
-    <IntlProviderTestWrapper>
-      <AppHeader />
-    </IntlProviderTestWrapper>,
-  );
-  it(`checks if component renders`, () => {
+  it(`checks if component renders in EN`, () => {
+    const { asFragment } = render(
+      <IntlProvider locale={`en-US`}>
+        <AppHeader />
+      </IntlProvider>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+  it(`checks if component renders in ES`, () => {
+    const { asFragment } = render(
+      <IntlProvider locale={`es-MX`}>
+        <AppHeader />
+      </IntlProvider>,
+    );
     expect(asFragment()).toMatchSnapshot();
   });
 });

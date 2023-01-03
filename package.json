@@ -22,7 +22,9 @@
     "test": "vitest",
     "test:watch": "vitest watch",
     "gc": "node .generate_component $1",
-    "intl:extract": "formatjs extract 'src/**/*.tsx' --out-file src/intl/en.json"
+    "intl:extract": "formatjs extract 'src/**/*.tsx' --out-file lang/en-US-extract.json",
+    "intl:createEnJson": "node lang/createEnJson",
+    "intl:format": "prettier --ignore-path .gitignore \"lang/**/*.+(ts|js|tsx|json)\" --write"
   },
   "engines": {
     "node": ">=18.0.0 || 14.21.1 || 14.17.5"
@@ -34,11 +36,12 @@
     "@formatjs/cli": "5.1.10",
     "@uswds/uswds": "3.3.0",
     "gatsby": "5.2.0",
-    "gatsby-plugin-intl": "0.3.3",
+    "gatsby-plugin-i18n-l10n": "5.0.1",
     "gatsby-plugin-pnpm": "1.2.10",
     "gatsby-plugin-sass": "6.3.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-intl": "6.2.5",
     "sass": "1.56.2",
     "tsconfig-paths-webpack-plugin": "4.0.0"
   },

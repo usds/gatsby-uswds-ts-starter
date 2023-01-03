@@ -1,0 +1,17 @@
+{
+  "languages.es-MX": "ES",
+  "languages.en-US": "EN",
+  "common.nav.LOGO_TITLE": "Your logo title goes here",
+  "common.nav.links.ONE": "First page",
+  "common.nav.links.THREE": "Third page",
+  "common.nav.links.TWO": "Second page",
+  "first.page.copy.HEADING1": "First Page",
+  "first.page.copy.SUMMARY_CONTENT": "Summary content for page 1",
+  "first.page.copy.SUMMARY_TITLE": "Key Information",
+  "second.page.copy.HEADING1": "Second Page",
+  "second.page.copy.SUMMARY_CONTENT": "Summary content for page 2",
+  "second.page.copy.SUMMARY_TITLE": "Key Information",
+  "third.page.copy.HEADING1": "Third Page",
+  "third.page.copy.SUMMARY_CONTENT": "Summary content for page 3",
+  "third.page.copy.SUMMARY_TITLE": "Key Information"
+}

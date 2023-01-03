@@ -51,10 +51,23 @@ To start the project locally:
 
 1. Git clone the starter repo (above)
 2. open `your-project-name` in VS Code
-3. Open a terminal in VS Code. Check your node version using `node -v`
-4. If you don't have node 18, install and verify that `node -v` return 18.x
-5. run `pnpm install`
-6. run `pnpm clean && pnpm start`
+3. If you don't have node 18, install and verify that `node -v` return 18.x. You can use `nvm` or `asdf`
+4. run `nvm use 18`
+5. run `code .`
+6. After VS code opens, open a terminal
+7. Check your node version using `node -v`
+8. Ensure that `pnpm` and `gatsby-cli` are globally installed:
+
+```
+$ npm list -g --depth=0
+/Users/username/.nvm/versions/node/v18.12.1/lib
+├── corepack@0.14.2
+├── gatsby-cli@5.2.0
+├── npm@8.19.2
+└── pnpm@7.18.2
+```
+8. run `pnpm install`
+8. run `pnpm clean && pnpm start`
 
 Open `http://localhost:8000` with your browser to see the result.
 
@@ -96,14 +109,6 @@ import { Button } from '@/components/Button';
 import avatar from '@/static/avatar.png';
 ```
 
-### Switch to Yarn/npm
-
-This starter uses pnpm by default, but this choice is yours. If you'd like to switch to Yarn/npm, delete the `pnpm-lock.yaml` file, install the dependencies with Yarn/npm, change the CI workflow, Husky Git hooks to use Yarn/npm commands, and uninstall the `gatsby-plugin-pnpm` plugin (you also need to remove it from the `gatsby-config` file).
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for more information.
-
 ## USDS Specific
 - works with [trusswork](https://trussworks.github.io/react-uswds/) components
 - can use [USWDS tokens](https://designsystem.digital.gov/design-tokens/) as mixins in sass modules (at component level)
@@ -116,3 +121,25 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 - `pnmp run format`
 - `pnmp run test`
 - `pnmp run intl:extract`
+
+## i18n
+
+The steps involved with creating i18n content is as follows:
+
+1. Use `react-intl` as demonstrated in various pages and/or components.
+1. When new content is added, run `pnpm intl:extract`. This will update the json object in `lang/en-US-extract.json`.
+2. Run `pnpm intl:createEnJson`. This will modify the extracted JSON file into an AST that the library expects and remove console errors.
+3. Run `pnpm intl:format`. This will format all the files in the `lang` folder using prettier.
+4. Translate the `en-US.json` file to an `es-MX.json` file to provide language support.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for more information.
+
+
+## Credits
+
+
+<div>
+  Original repo created by <a href="https://twitter.com/jpedroschmitz">João Pedro</a> with the help of many <a href="https://github.com/jpedroschmitz/gatsby-starter-ts/graphs/contributors">wonderful contributors</a>. Shout out from USDS!
+</div>

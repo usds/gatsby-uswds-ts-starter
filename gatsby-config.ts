@@ -1,5 +1,17 @@
 import type { GatsbyConfig } from 'gatsby';
-import path from 'path';
+import enUSMessages from './lang/en-US.json';
+import esMXMessages from './lang/es-MX.json';
+
+require(`dotenv`).config({
+  // NODE_ENV is automatically set to
+  //   'development' when the app is launched via 'npm start' or 'npm develop'
+  //   'production' when the app is launched via 'npm build'
+
+  // Depending on the node environment, the app will then use
+  // .env.production or .env.development for application
+  // env variables.
+  path: `.env.${process.env.NODE_ENV}`,
+});
 
 const config: GatsbyConfig = {
   // Since `gatsby-plugin-typescript` is automatically included in Gatsby you
@@ -18,16 +30,36 @@ const config: GatsbyConfig = {
       },
     },
     {
-      resolve: `gatsby-plugin-intl`,
+      resolve: `gatsby-plugin-i18n-l10n`,
       options: {
-        // language JSON resource path
-        path: path.join(__dirname, `src`, `intl`),
-        // supported language
-        languages: [`en`, `es`],
-        // language file path
-        defaultLanguage: `en`,
-        // option to redirect to `/en` when connecting `/`
-        redirect: true,
+        // IETF BCP 47 language tag: default locale, which won't be prefixed
+        defaultLocale: `en-US`,
+        // string: absolute site url
+        siteUrl: process.env.SITE_URL,
+        prefix: `en`,
+        // locales[]: all locales, which should be available
+        locales: [
+          {
+            // IETF BCP 47 language tag of this language
+            locale: `en-US`,
+            // string: prefix for this language, which will be used to prefix the url, if it's not the default locale
+            prefix: `en`,
+            // object: mapping of given urls (by filename) to translated urls, if no mapping exists, given url will be used
+            slugs: {},
+            // object: this messages will be handed over to react-intl and available throughout the website
+            messages: enUSMessages,
+          },
+          {
+            // IETF BCP 47 language tag of this language
+            locale: `es-MX`,
+            // string: prefix for this language, which will be used to prefix the url, if it's not the default locale
+            prefix: `es`,
+            // object: mapping of given urls (by filename) to translated urls, if no mapping exists, given url will be used
+            slugs: {},
+            // object: this messages will be handed over to react-intl and available throughout the website
+            messages: esMXMessages,
+          },
+        ],
       },
     },
   ],
