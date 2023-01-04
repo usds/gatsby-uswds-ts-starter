@@ -14,6 +14,11 @@ const SEO = ({ title }: ISEOProps) => {
 
   return (
     <Helmet defer={false}>
+      <meta charSet="utf-8" />
+
+      {/* Render Chrome if available or using latest version of Internet Explorer (Recommended). */}
+      <meta httpEquiv="X-UA-Compatible" content="IE=edge; chrome=1" />
+
       <title>{`${title}`}</title>
 
       {/* Description content should ideally be between 160 - 200 characters */}
