@@ -8,7 +8,7 @@ describe(`rendering of Layout Component`, () => {
   it(`checks if component renders in en-US`, () => {
     const { asFragment } = render(
       <IntlProvider locale="en-US">
-        <Layout>
+        <Layout title={`First`}>
           <Component />
         </Layout>
       </IntlProvider>,
@@ -18,7 +18,7 @@ describe(`rendering of Layout Component`, () => {
   it(`checks if component renders in es-MX`, () => {
     const { asFragment } = render(
       <IntlProvider locale="es-MX">
-        <Layout>
+        <Layout title={`Primera`}>
           <Component />
         </Layout>
       </IntlProvider>,

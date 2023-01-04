@@ -7,7 +7,6 @@ import {
 
 import Layout from '@/components/Layout';
 import MainGridContainer from '@/components/MainGridContainer';
-import SEO from '@/components/SEO';
 
 const FIRST_PAGE_COPY = defineMessages({
   HEADING1: {
@@ -31,7 +30,7 @@ const IndexPage = () => {
   const intl = useIntl();
 
   return (
-    <Layout>
+    <Layout title={intl.formatMessage(FIRST_PAGE_COPY.HEADING1)}>
       <MainGridContainer>
         <h1>{intl.formatMessage(FIRST_PAGE_COPY.HEADING1)}</h1>
         <SummaryBox>
@@ -46,7 +45,5 @@ const IndexPage = () => {
     </Layout>
   );
 };
-
-export const Head = () => <SEO title={`First Page`} />;
 
 export default IndexPage;
