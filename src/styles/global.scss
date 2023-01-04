@@ -35,3 +35,13 @@ Some USWDS components have pseudo elements (::before and ::after) that use the m
 .usa-banner__button::after {
     -webkit-mask: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMTYuNTkgOC41OSAxMiAxMy4xNyA3LjQxIDguNTkgNiAxMGw2IDYgNi02eiIvPjwvc3ZnPg==) no-repeat center/contain;
 }
+
+/**
+Remove bottom-border on navbar
+*/
+.usa-header {
+  +.usa-section,
+  +main {
+    border-top-width: 0;
+  }
+}
