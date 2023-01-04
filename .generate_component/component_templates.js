@@ -39,19 +39,18 @@ declare const ${name}ScssModule: ${name}Namespace.I${name}Scss & {
 `;
 
 // component.test.tsx
-exports.test = name => `import { render } from '@testing-library/react';
-import {IntlProviderTestWrapper} from '@/test/testHelpers';
+exports.test = name => `import createComponentWithIntl from '@/test/testHelpers';
+
 import ${name} from './${name}';
 
-describe('rendering of ${name} Component', () => {
-    const {asFragment} = render(
-        <IntlProviderTestWrapper>
-          <${name} />
-        </IntlProviderTestWrapper>,
-    );
-    it('checks if component renders', () => {
-      expect(asFragment()).toMatchSnapshot();
-    });
+describe("rendering of ${name} Component", () => {
+  it("checks if component renders", () => {
+    const component = createComponentWithIntl(<${name} />);
+
+    const tree = component.toJSON();
+
+    expect(tree).toMatchSnapshot();
+  });
 });
 `;
 

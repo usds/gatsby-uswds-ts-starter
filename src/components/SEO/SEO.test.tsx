@@ -1,14 +1,13 @@
-import { render } from '@testing-library/react';
-import { IntlProviderTestWrapper } from '@/test/testHelpers';
+import createComponentWithIntl from '@/test/testHelpers';
+
 import SEO from './SEO';
 
 describe(`rendering of SEO Component`, () => {
-  const { asFragment } = render(
-    <IntlProviderTestWrapper>
-      <SEO title={`Page Title`} />
-    </IntlProviderTestWrapper>,
-  );
   it(`checks if component renders`, () => {
-    expect(asFragment()).toMatchSnapshot();
+    const component = createComponentWithIntl(<SEO title={`Page Title`} />);
+
+    const tree = component.toJSON();
+
+    expect(tree).toMatchSnapshot();
   });
 });

@@ -1,26 +1,22 @@
 // Vitest Snapshot v1
 
 exports[`rendering of MainGridContainer Component > checks if component renders with Full width false 1`] = `
-<DocumentFragment>
-  <div
-    class="grid-container-desktop-lg"
-    data-testid="gridContainer"
-  >
-    <h1>
-      Test
-    </h1>
-  </div>
-</DocumentFragment>
+<div
+  className="grid-container-desktop-lg"
+  data-testid="gridContainer"
+>
+  <h1>
+    Test
+  </h1>
+</div>
 `;
 
 exports[`rendering of MainGridContainer Component > checks if component renders with Full width true 1`] = `
-<DocumentFragment>
-  <div
-    class=""
-  >
-    <h1>
-      Test
-    </h1>
-  </div>
-</DocumentFragment>
+<div
+  className=""
+>
+  <h1>
+    Test
+  </h1>
+</div>
 `;
