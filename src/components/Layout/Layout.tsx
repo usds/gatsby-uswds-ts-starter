@@ -7,14 +7,15 @@ import SEO from '@/components/SEO';
 
 export interface ILayoutProps {
   children: ReactNode;
+  location: Location;
   title: string;
 }
 
-const Layout = ({ children, title }: ILayoutProps) => {
+const Layout = ({ children, location, title }: ILayoutProps) => {
   return (
     <>
       <SEO title={title} />
-      <AppHeader />
+      <AppHeader location={location} />
       <main id={`main-content`}>{children}</main>
     </>
   );

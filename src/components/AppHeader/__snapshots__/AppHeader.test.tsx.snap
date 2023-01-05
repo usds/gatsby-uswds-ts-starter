@@ -247,7 +247,7 @@ exports[`rendering of AppHeader Component > checks if component renders 1`] = `
             >
               <a
                 aria-current="page"
-                className="usa-current"
+                className="usa-current active"
                 href="/"
                 onClick={[Function]}
                 onMouseEnter={[Function]}

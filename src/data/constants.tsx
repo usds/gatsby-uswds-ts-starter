@@ -5,6 +5,11 @@ export const PAGES_ENDPOINTS = {
   SECOND: `/second-page`,
   THIRD: `/third-page`,
 };
+export const PAGES_ENDPOINTS_ES = {
+  FIRST: `/es/`,
+  SECOND: `/es/second-page`,
+  THIRD: `/es/third-page`,
+};
 
 // USWDS Breakpoints
 export const USWDS_BREAKPOINTS = {

@@ -10,11 +10,12 @@ import {
 } from '@trussworks/react-uswds';
 import MainGridContainer from '@/components/MainGridContainer';
 import GovBanner from '@/components/GovBanner';
+import { PAGES_ENDPOINTS, PAGES_ENDPOINTS_ES } from '@/data/constants';
+import { ILocation } from '@/types';
 
 // @ts-ignore
 import siteLogo from '@/static/images/usds-logo.png';
 import * as styles from './AppHeader.module.scss';
-import { PAGES_ENDPOINTS } from '@/data/constants';
 
 /**
  * The AppHeader component will control how the header looks for both mobile and desktop
@@ -27,7 +28,7 @@ import { PAGES_ENDPOINTS } from '@/data/constants';
  * @param {Location} location
  * @return {JSX.Element}
  */
-const AppHeader = () => {
+const AppHeader = ({ location }: ILocation) => {
   const intl = useIntl();
 
   /**
@@ -73,7 +74,16 @@ const AppHeader = () => {
     <LocalizedLink
       to={PAGES_ENDPOINTS.FIRST}
       key={`index-page`}
-      activeClassName="usa-current"
+      // This logic is added to className because for some reason this
+      // component keeps the first nav link active even when other nav
+      // links are active. The logic below only adds the usa-current
+      // class if the URL is actually on the first page.
+      className={
+        location.pathname === PAGES_ENDPOINTS.FIRST ||
+        location.pathname === PAGES_ENDPOINTS_ES.FIRST
+          ? `usa-current`
+          : ``
+      }
       data-cy={`nav-link-index-page`}
     >
       {intl.formatMessage(NAV_LINKS_COPY.ONE)}
