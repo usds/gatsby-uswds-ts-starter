@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { defineMessages, FormattedMessage, useIntl } from 'react-intl';
+import { FormattedMessage } from 'react-intl';
 import { LocalizedLink } from 'gatsby-plugin-i18n-l10n';
 
 import {
@@ -10,7 +10,7 @@ import {
 } from '@trussworks/react-uswds';
 import MainGridContainer from '@/components/MainGridContainer';
 import GovBanner from '@/components/GovBanner';
-import { PAGES_ENDPOINTS, PAGES_ENDPOINTS_ES } from '@/data/constants';
+import { PAGE_ENDPOINTS, PAGE_ENDPOINTS_ES } from '@/data/constants';
 import { ILocation } from '@/types';
 
 // @ts-ignore
@@ -29,8 +29,6 @@ import * as styles from './AppHeader.module.scss';
  * @return {JSX.Element}
  */
 const AppHeader = ({ location }: ILocation) => {
-  const intl = useIntl();
-
   /**
    * State variable to control the toggling of mobile menu button
    */
@@ -51,64 +49,54 @@ const AppHeader = ({ location }: ILocation) => {
   // Logo text
   const logoLine1 = HEADER.LOGO_TITLE;
 
-  const NAV_LINKS_COPY = defineMessages({
-    ONE: {
-      id: `common.nav.links.ONE`,
-      defaultMessage: `First page`,
-      description: `the first nav link`,
-    },
-    TWO: {
-      id: `common.nav.links.TWO`,
-      defaultMessage: `Second page`,
-      description: `the second nav link`,
-    },
-    THREE: {
-      id: `common.nav.links.THREE`,
-      defaultMessage: `Third page`,
-      description: `the third nav link`,
-    },
-  });
-
-  // Navigation links for app
-  const navLinks = [
-    <LocalizedLink
-      to={PAGES_ENDPOINTS.FIRST}
-      key={`index-page`}
-      // This logic is added to className because for some reason this
-      // component keeps the first nav link active even when other nav
-      // links are active. The logic below only adds the usa-current
-      // class if the URL is actually on the first page.
-      className={
-        location.pathname === PAGES_ENDPOINTS.FIRST ||
-        location.pathname === PAGES_ENDPOINTS_ES.FIRST
-          ? `usa-current`
-          : ``
-      }
-      data-cy={`nav-link-index-page`}
-    >
-      {intl.formatMessage(NAV_LINKS_COPY.ONE)}
-    </LocalizedLink>,
-    <LocalizedLink
-      to={PAGES_ENDPOINTS.SECOND}
-      key={`second-page`}
-      activeClassName="usa-current"
-      data-cy={`nav-link-second-page`}
-    >
-      {intl.formatMessage(NAV_LINKS_COPY.TWO)}
-    </LocalizedLink>,
-    <LocalizedLink
-      to={PAGES_ENDPOINTS.THIRD}
-      key={`third-page`}
-      activeClassName="usa-current"
-      data-cy={`nav-link-third-page`}
-    >
-      {intl.formatMessage(NAV_LINKS_COPY.THREE)}
-    </LocalizedLink>,
-    // Temporarily removing language link until translation is completed
-    // <div key={'language'}>
-    //   <Language isDesktop={false}/>
-    // </div>,
+  // Attempting to create this array from a map function causes the extracted
+  // intl json file (after running intl:extract) to create random IDs.
+  const NAV_LINKS_COPY = [
+    <FormattedMessage
+      key={`${PAGE_ENDPOINTS[0]}`}
+      id={`common.nav.links.first.page`}
+      defaultMessage={`First page`}
+      description={`the first page nav link`}
+    />,
+    <FormattedMessage
+      key={`${PAGE_ENDPOINTS[1]}`}
+      id={`common.nav.links.second.page`}
+      defaultMessage={`Second page`}
+      description={`the second page nav link`}
+    />,
+    <FormattedMessage
+      key={`${PAGE_ENDPOINTS[2]}`}
+      id={`common.nav.links.third.page`}
+      defaultMessage={`Third page`}
+      description={`the third page nav link`}
+    />,
   ];
+
+  const navLinks = PAGE_ENDPOINTS.map((name, index) => {
+    let navLinksActiveClassName = `usa-current`;
+
+    // This is to address a bug with the nav component from
+    // Trussworks that keeps the first page as active event
+    // when navigating to another page
+    if (index === 0) {
+      navLinksActiveClassName =
+        location.pathname === PAGE_ENDPOINTS[index] ||
+        location.pathname === PAGE_ENDPOINTS_ES[index]
+          ? `usa-current`
+          : ``;
+    }
+
+    return (
+      <LocalizedLink
+        to={name}
+        key={`page-${index}`}
+        activeClassName={navLinksActiveClassName}
+        data-cy={`nav-link-page-${index}`}
+      >
+        {NAV_LINKS_COPY[index]}
+      </LocalizedLink>
+    );
+  });
 
   return (
     <Header basic={true} role={`banner`}>
@@ -121,7 +109,7 @@ const AppHeader = ({ location }: ILocation) => {
           {/* Logo */}
           <Grid col={1}>
             <LocalizedLink
-              to={PAGES_ENDPOINTS.FIRST}
+              to={PAGE_ENDPOINTS[0]}
               key={`first-page`}
               data-cy={`nav-link-first-page`}
             >
@@ -136,7 +124,7 @@ const AppHeader = ({ location }: ILocation) => {
           {/* Logo Title */}
           <Grid col={6}>
             <LocalizedLink
-              to={PAGES_ENDPOINTS.FIRST}
+              to={PAGE_ENDPOINTS[0]}
               key={`first-page`}
               className="remove-link-style"
               data-cy={`nav-link-first-page`}

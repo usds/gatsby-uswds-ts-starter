@@ -3,26 +3,29 @@
     "defaultMessage": "Your logo title goes here",
     "description": "Navigate to any page. This is LOGO_TITLE in the header"
   },
-  "common.nav.links.ONE": {
+  "common.nav.links.first.page": {
     "defaultMessage": "First page",
-    "description": "the first nav link"
+    "description": "the first page nav link"
   },
-  "common.nav.links.THREE": {
-    "defaultMessage": "Third page",
-    "description": "the third nav link"
-  },
-  "common.nav.links.TWO": {
+  "common.nav.links.second.page": {
     "defaultMessage": "Second page",
-    "description": "the second nav link"
+    "description": "the second page nav link"
+  },
+  "common.nav.links.third.page": {
+    "defaultMessage": "Third page",
+    "description": "the third page nav link"
   },
   "first.page.copy.HEADING1": {
-    "defaultMessage": "First Page"
+    "defaultMessage": "First Page",
+    "description": "page heading"
   },
   "first.page.copy.SUMMARY_CONTENT": {
-    "defaultMessage": "Summary content for page 1"
+    "defaultMessage": "Summary content for page 1",
+    "description": "summary title"
   },
   "first.page.copy.SUMMARY_TITLE": {
-    "defaultMessage": "Key Information"
+    "defaultMessage": "Key Information",
+    "description": "summary title"
   },
   "second.page.copy.HEADING1": {
     "defaultMessage": "Second Page",
