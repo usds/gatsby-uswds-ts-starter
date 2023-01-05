@@ -14,7 +14,10 @@ require(`dotenv`).config({
 });
 
 const config: GatsbyConfig = {
-  pathPrefix: process.env.DEPLOY_PREFIX || ``,
+  siteMetadata: {
+    siteUrl: process.env.SITE_URL || `http://localhost:8000`,
+  },
+  // pathPrefix: process.env.DEPLOY_PREFIX || ``,
   // Since `gatsby-plugin-typescript` is automatically included in Gatsby you
   // don't need to define it here (just if you need to change the options)
   plugins: [
