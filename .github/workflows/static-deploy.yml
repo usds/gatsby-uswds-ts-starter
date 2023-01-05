@@ -1,0 +1,24 @@
+
+name: Gatsby Publish Main
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - uses: enriikke/gatsby-gh-pages-action@v2
+        env:
+          DEPLOY_PREFIX: gatsby-uswds-ts-starter/
+          SITE_URL: https://usds.github.io/gatsby-uswds-ts-starter/
+        with:
+          access-token: ${{ secrets.ACCESS_TOKEN }}
+          deploy-branch: gh-pages
+          gatsby-args: --prefix-paths
