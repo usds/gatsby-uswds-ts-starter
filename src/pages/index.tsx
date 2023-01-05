@@ -7,6 +7,7 @@ import {
 
 import Layout from '@/components/Layout';
 import MainGridContainer from '@/components/MainGridContainer';
+import { ILocation } from '@/types';
 
 const FIRST_PAGE_COPY = defineMessages({
   HEADING1: {
@@ -26,11 +27,14 @@ const FIRST_PAGE_COPY = defineMessages({
   },
 });
 
-const IndexPage = () => {
+const IndexPage = ({ location }: ILocation) => {
   const intl = useIntl();
 
   return (
-    <Layout title={intl.formatMessage(FIRST_PAGE_COPY.HEADING1)}>
+    <Layout
+      location={location}
+      title={intl.formatMessage(FIRST_PAGE_COPY.HEADING1)}
+    >
       <MainGridContainer>
         <h1>{intl.formatMessage(FIRST_PAGE_COPY.HEADING1)}</h1>
         <SummaryBox>

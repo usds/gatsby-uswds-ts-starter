@@ -1,10 +1,7 @@
 // Pages URL
 
-export const PAGES_ENDPOINTS = {
-  FIRST: `/`,
-  SECOND: `/second-page`,
-  THIRD: `/third-page`,
-};
+export const PAGE_ENDPOINTS = [`/`, `/second-page`, `/third-page`];
+export const PAGE_ENDPOINTS_ES = [`/es/`, `/es/second-page`, `/es/third-page`];
 
 // USWDS Breakpoints
 export const USWDS_BREAKPOINTS = {

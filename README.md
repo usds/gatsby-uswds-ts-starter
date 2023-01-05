@@ -127,10 +127,9 @@ import avatar from '@/static/avatar.png';
 The steps involved with creating i18n content is as follows:
 
 1. Use `react-intl` as demonstrated in various pages and/or components.
-1. When new content is added, run `pnpm intl:extract`. This will update the json object in `lang/en-US-extract.json`.
-2. Run `pnpm intl:createEnJson`. This will modify the extracted JSON file into an AST that the library expects and remove console errors.
-3. Run `pnpm intl:format`. This will format all the files in the `lang` folder using prettier.
-4. Translate the `en-US.json` file to an `es-MX.json` file to provide language support.
+2. When new content is added, run `pnpm intl:extract`. This will update the json object in `lang/en-US-extract.json`.
+3. Run `pnpm intl:createEnJson`. This will modify the extracted JSON file into an AST that the library expects and remove console errors.
+4. Translate the `en-US.json` file to an `es-MX.json`. Each key from the `en-US.json` file should have a spanish value in `es-MX.json`.
 
 ## License
 

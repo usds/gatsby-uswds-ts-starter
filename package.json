@@ -23,8 +23,7 @@
     "test:watch": "vitest watch",
     "gc": "node .generate_component $1",
     "intl:extract": "formatjs extract 'src/**/*.tsx' --out-file lang/en-US-extract.json",
-    "intl:createEnJson": "node lang/createEnJson",
-    "intl:format": "prettier --ignore-path .gitignore \"lang/**/*.+(ts|js|tsx|json)\" --write"
+    "intl:createEnJson": "node lang/createEnJson && prettier --ignore-path .gitignore \"lang/**/*.+(ts|js|tsx|json)\" --write"
   },
   "engines": {
     "node": ">=18.0.0 || 14.21.1 || 14.17.5"
