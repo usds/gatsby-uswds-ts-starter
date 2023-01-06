@@ -1,0 +1,63 @@
+name: deploy staging
+
+on: [pull_request]
+
+jobs:
+  run-ci:
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    name: Lint, test, build and deploy
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2.2.4
+        with:
+          version: 7
+
+      - name: Set up Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: lts/*
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Check types
+        run: pnpm type-check
+
+      - name: Check linting
+        run: pnpm lint
+
+      - name: Run tests
+        run: pnpm test
+
+      - name: Check commits messages
+        uses: wagoid/commitlint-github-action@v5
+
+      - name: Set DESTINATION_FOLDER for branch
+        run: |
+          echo "DESTINATION_FOLDER=$(echo $PR_NUMBER-$GITHUB_SHA | cut -c 1-7)" >> $GITHUB_ENV
+
+      - name: Build project
+        run: pnpm build
+        env: 
+          SITE_URL: "${{ secrets.STAGE_SITE_URL }}"
+          DEPLOY_PREFIX: "/${{env.DESTINATION_FOLDER}}/"
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-west-1
+
+      - name: Deploy to Geoplatform AWS
+        run: aws s3 sync ./public/ s3://gatsby-uswds-ts-starter/${{env.DESTINATION_FOLDER}} --acl public-read --delete
