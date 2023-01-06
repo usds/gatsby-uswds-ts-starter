@@ -47,7 +47,7 @@ jobs:
           echo "DESTINATION_FOLDER=$(echo $PR_NUMBER-$GITHUB_SHA | cut -c 1-7)" >> $GITHUB_ENV
 
       - name: Build project
-        run: pnpm build 
+        run: pnpm build --prefix-paths
         env: 
           SITE_URL: "${{ secrets.STAGE_SITE_URL }}"
           PATH_PREFIX: "/${{env.DESTINATION_FOLDER}}"
