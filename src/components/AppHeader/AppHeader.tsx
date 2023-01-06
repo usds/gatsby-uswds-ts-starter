@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { withPrefix } from 'gatsby';
 import { FormattedMessage } from 'react-intl';
 import { LocalizedLink } from 'gatsby-plugin-i18n-l10n';
 
@@ -32,6 +33,10 @@ const AppHeader = ({ location }: ILocation) => {
   /**
    * State variable to control the toggling of mobile menu button
    */
+
+  const isHomePage = location.pathname === withPrefix(`/`);
+  console.log(isHomePage);
+
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
   const toggleMobileNav = (): void => {
     setMobileNavOpen((prevOpen) => !prevOpen);
@@ -80,8 +85,8 @@ const AppHeader = ({ location }: ILocation) => {
     // when navigating to another page
     if (index === 0) {
       navLinksActiveClassName =
-        location.pathname === PAGE_ENDPOINTS[index] ||
-        location.pathname === PAGE_ENDPOINTS_ES[index]
+        location.pathname === withPrefix(PAGE_ENDPOINTS[index]) ||
+        location.pathname === withPrefix(PAGE_ENDPOINTS_ES[index])
           ? `usa-current`
           : ``;
     }
