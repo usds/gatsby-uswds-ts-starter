@@ -44,10 +44,10 @@ jobs:
 
       - name: Set DESTINATION_FOLDER for branch
         run: |
-          echo "DESTINATION_FOLDER=$(echo $PR_NUMBER-$GITHUB_SHA | cut -c 1-11)" >> $GITHUB_ENV
+          echo "DESTINATION_FOLDER=$(echo $PR_NUMBER-$GITHUB_SHA | cut -c 1-7)" >> $GITHUB_ENV
 
       - name: Build project
-        run: pnpm build
+        run: pnpm build 
         env: 
           SITE_URL: "${{ secrets.STAGE_SITE_URL }}"
           PATH_PREFIX: "/${{env.DESTINATION_FOLDER}}"

@@ -15,6 +15,7 @@ require(`dotenv`).config({
 
 const config: GatsbyConfig = {
   siteMetadata: {
+    pathPrefix: process.env.PATH_PREFIX,
     siteUrl: process.env.SITE_URL || `http://localhost:8000`,
   },
   // pathPrefix: process.env.DEPLOY_PREFIX || ``,
