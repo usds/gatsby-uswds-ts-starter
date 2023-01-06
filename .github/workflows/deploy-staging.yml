@@ -7,7 +7,7 @@ jobs:
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-    name: Run Type Check & Linters
+    name: Lint, test, build and deploy
     runs-on: ubuntu-latest
 
     steps:
@@ -55,8 +55,8 @@ jobs:
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
-          aws-access-key-id: ${{ secrets.CLIENT_DEV_AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.CLIENT_DEV_AWS_SECRET_ACCESS_KEY }}
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-west-1
 
       - name: Deploy to Geoplatform AWS
