@@ -47,7 +47,7 @@ jobs:
 
       - name: Set DESTINATION_FOLDER for branch
         run: |
-          echo "DESTINATION_FOLDER=$(echo $PR_NUMBER-$GITHUB_SHA | cut -c 1-7)" >> $GITHUB_ENV
+          echo "DESTINATION_FOLDER=$(echo $PR_NUMBER-$GITHUB_SHA | cut -c 1-11)" >> $GITHUB_ENV
 
       - name: Build project
         run: pnpm build
