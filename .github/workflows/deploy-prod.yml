@@ -1,12 +1,11 @@
-name: Deploy Staging
+name: Deploy Production
 
-on: 
-  pull_request:
-    branches:
-    - main
+on:
+  push:
+    branches: [main]
 
 env:
-  PR_NUMBER: ${{github.event.pull_request.number}}
+  PR_NUMBER: ${{ github.event.number }}
 
 jobs:
   run-ci:
@@ -50,7 +49,7 @@ jobs:
 
       - name: Set DESTINATION_FOLDER for branch
         run: |
-          echo "DESTINATION_FOLDER=$(echo $PR_NUMBER-$GITHUB_SHA | cut -c 1-11)" >> $GITHUB_ENV
+          echo "DESTINATION_FOLDER=main" >> $GITHUB_ENV
 
       - name: Build project
         run: pnpm build
