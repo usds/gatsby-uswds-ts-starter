@@ -9,18 +9,6 @@
 
 <br />
 
-<!-- <div align="center">
-  <img src="https://img.shields.io/static/v1?label=PRs&message=welcome&style=flat-square&color=5e17eb&labelColor=000000" alt="PRs welcome!" />
-
-  <img alt="License" src="https://img.shields.io/github/license/jpedroschmitz/gatsby-starter-ts?style=flat-square&color=5e17eb&labelColor=000000">
-
-  <a href="https://twitter.com/intent/follow?screen_name=jpedroschmitz">
-    <img src="https://img.shields.io/twitter/follow/jpedroschmitz?style=flat-square&color=5e17eb&labelColor=000000" alt="Follow @jpedroschmitz" />
-  </a>
-</div> -->
-
-<br />
-
 ## Features
 
 - ⚡️ Gatsby 5
@@ -39,7 +27,7 @@
 
 ## Quick Start
 
-The best way to start with this template is using the [Gatsby CLI](https://www.gatsbyjs.com/docs/reference/gatsby-cli/).
+The best way to start is to clone this repo:
 
 ```
 git clone https://github.com/usds/gastby-uswds-ts-starter.git your-project-name
@@ -49,14 +37,10 @@ git clone https://github.com/usds/gastby-uswds-ts-starter.git your-project-name
 
 To start the project locally:
 
-1. Git clone the starter repo (above)
-2. open `your-project-name` in VS Code
-3. If you don't have node 18, install and verify that `node -v` return 18.x. You can use `nvm` or `asdf`
-4. run `nvm use 18`
-5. run `code .`
-6. After VS code opens, open a terminal
-7. Check your node version using `node -v`
-8. Ensure that `pnpm` and `gatsby-cli` are globally installed:
+1. Git clone the starter repo (above) in a terminal
+2. If you don't have node 18, install and verify that `node -v` return 18.x. You can use `nvm` or `asdf`
+3. run `nvm use 18`
+4. Ensure that `pnpm` and `gatsby-cli` are globally installed:
 
 ```
 $ npm list -g --depth=0
@@ -66,8 +50,8 @@ $ npm list -g --depth=0
 ├── npm@8.19.2
 └── pnpm@7.18.2
 ```
-8. run `pnpm install`
-8. run `pnpm clean && pnpm start`
+5. run `pnpm install`
+6. run `pnpm clean && pnpm start`
 
 Open `http://localhost:8000` with your browser to see the result.
 
@@ -122,7 +106,7 @@ import avatar from '@/static/avatar.png';
 - `pnmp run test`
 - `pnmp run intl:extract`
 
-## i18n
+### i18n
 
 The steps involved with creating i18n content is as follows:
 
@@ -130,6 +114,23 @@ The steps involved with creating i18n content is as follows:
 2. When new content is added, run `pnpm intl:extract`. This will update the json object in `lang/en-US-extract.json`.
 3. Run `pnpm intl:createEnJson`. This will modify the extracted JSON file into an AST that the library expects and remove console errors.
 4. Translate the `en-US.json` file to an `es-MX.json`. Each key from the `en-US.json` file should have a spanish value in `es-MX.json`.
+
+### Deployment
+Currently this repo is using Github actions (see [.github/workflows](https://github.com/usds/gatsby-uswds-ts-starter/tree/main/.github/workflows) in the root directory) for deployment to AWS with the support of Geoplatform.
+
+These actions will
+1. creates a staging link (see [deploy-staging.yml](https://github.com/usds/gatsby-uswds-ts-starter/blob/main/.github/workflows/deploy-staging.yml)) as a comment in every PR made against `main` that passes all checks (type-check, linting, testing, format, commit messages)
+2. update the production folder on AWS
+3. remove any artifacts of the PR when the PR is closed (see [close-pr.yml](https://github.com/usds/gatsby-uswds-ts-starter/blob/main/.github/workflows/close-pr.yml))
+
+In order for these actions to work as is, the following [secrets need to be added](https://docs.github.com/en/codespaces/managing-codespaces-for-your-organization/managing-encrypted-secrets-for-your-repository-and-organization-for-github-codespaces) in your repo:
+1. AWS_ACCESS_KEY_ID
+2. AWS_SECRET_ACCESS_KEY
+3. STAGE_SITE_URL
+
+The AWS_ACCESS_KEY_ID and the AWS_SECRET_ACCESS_KEY will allow for programmatic (via CLI) access to your AWS resources. See the programmatic access section on [here](https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.htm).
+
+The STAGE_SITE_URL should point to the name of your S3 bucket or CDN.
 
 ## License
 

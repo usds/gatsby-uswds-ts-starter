@@ -24,6 +24,7 @@ specifiers:
   babel-eslint: 10.1.0
   babel-preset-gatsby: 3.2.0
   c8: 7.12.0
+  dotenv: 16.0.3
   eslint: 8.28.0
   eslint-config-prettier: 8.5.0
   eslint-config-standard: 17.0.0
@@ -58,6 +59,7 @@ specifiers:
 dependencies:
   '@formatjs/cli': 5.1.10
   '@uswds/uswds': 3.3.0
+  dotenv: 16.0.3
   gatsby: 5.2.0_obngzlhfhp62brzfm6kf5e6qam
   gatsby-plugin-i18n-l10n: 5.0.1_ikkl64sqiya647fv2oiu7543y4
   gatsby-plugin-pnpm: 1.2.10_gatsby@5.2.0
@@ -6526,6 +6528,11 @@ packages:
 
   /dotenv-expand/5.1.0:
     resolution: {integrity: sha512-YXQl1DSa4/PQyRfgrv6aoNjhasp/p4qs9FjJ4q4cQk+8m4r6k4ZSiEyytKG8f8W9gi8WsQtIObNmKd+tMzNTmA==}
+    dev: false
+
+  /dotenv/16.0.3:
+    resolution: {integrity: sha512-7GO6HghkA5fYG9TYnNxi14/7K9f5occMlp3zXAuSxn7CKCxt9xbNWG7yF8hTCSUchlfWSe3uLmlPfigevRItzQ==}
+    engines: {node: '>=12'}
     dev: false
 
   /dotenv/7.0.0:

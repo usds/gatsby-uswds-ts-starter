@@ -1,19 +1,22 @@
 {
-  "name": "gatsby-starter-ts",
-  "description": "A TypeScript starter for Gatsby that includes all you need to build amazing projects",
+  "name": "gatsby-uswds-ts-starter",
+  "description": "A TypeScript starter for Gatsby that includes USWDS and trussworks",
   "version": "1.0.0",
   "private": true,
-  "author": "João Pedro Schmitz <hey@joaopedro.dev> (https://joaopedro.dev)",
+  "author": "Vim Shah <vimal.k.shah@omb.eop.gov>",
   "license": "MIT",
   "keywords": [
     "gatsby",
     "starter",
-    "typescript"
+    "typescript",
+    "uswds",
+    "trussworks",
+    "i18n"
   ],
   "scripts": {
     "start": "gatsby develop",
-    "build": "gatsby build",
-    "serve": "gatsby serve",
+    "build": "gatsby build --prefix-paths",
+    "serve": "gatsby serve --prefix-paths",
     "clean": "gatsby clean",
     "type-check": "tsc --noEmit",
     "lint": "eslint --ignore-path .gitignore \"src/**/*.+(ts|js|tsx)\"",
@@ -34,6 +37,7 @@
   "dependencies": {
     "@formatjs/cli": "5.1.10",
     "@uswds/uswds": "3.3.0",
+    "dotenv": "16.0.3",
     "gatsby": "5.2.0",
     "gatsby-plugin-i18n-l10n": "5.0.1",
     "gatsby-plugin-pnpm": "1.2.10",
