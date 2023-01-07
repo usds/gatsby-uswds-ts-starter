@@ -38,9 +38,10 @@ git clone https://github.com/usds/gastby-uswds-ts-starter.git your-project-name
 To start the project locally:
 
 1. Git clone the starter repo (above) in a terminal
-2. If you don't have node 18, install and verify that `node -v` return 18.x. You can use `nvm` or `asdf`
-3. run `nvm use 18`
-4. Ensure that `pnpm` and `gatsby-cli` are globally installed:
+2. run `cd your-project-name`
+3. If you don't have node 18, install and verify that `node -v` return 18.x. You can use `nvm` or `asdf`
+4. run `nvm use 18`
+5. Ensure that `pnpm` and `gatsby-cli` are globally installed:
 
 ```
 $ npm list -g --depth=0
@@ -50,8 +51,8 @@ $ npm list -g --depth=0
 ├── npm@8.19.2
 └── pnpm@7.18.2
 ```
-5. run `pnpm install`
-6. run `pnpm clean && pnpm start`
+6. run `pnpm install`
+7. run `pnpm clean && pnpm start`
 
 Open `http://localhost:8000` with your browser to see the result.
 
