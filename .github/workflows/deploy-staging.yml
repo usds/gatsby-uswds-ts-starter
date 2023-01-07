@@ -2,6 +2,9 @@ name: deploy staging
 
 on: [pull_request]
 
+env:
+  PR_NUMBER: ${{github.event.pull_request.number}}
+
 jobs:
   run-ci:
     env:
@@ -59,5 +62,16 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-west-1
 
-      - name: Deploy to Geoplatform AWS
+      - name: Deploy to AWS
         run: aws s3 sync ./public/ s3://gatsby-uswds-ts-starter/${{env.DESTINATION_FOLDER}} --acl public-read --delete
+      
+      - name: Update PR with staging URL
+        uses: mshick/add-pr-comment@v1
+        with:
+          # Deploy to S3 for the staging URL
+          message: |
+            **🚢  Here is the frontend staging link: 🚢**   
+            Find it here: http://gatsby-uswds-ts-starter.s3-website-us-west-1.amazonaws.com/${{env.DESTINATION_FOLDER}} !
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          repo-token-user-login: "github-actions[bot]" # The user.login for temporary GitHub tokens
+          allow-repeats: false # This is the default

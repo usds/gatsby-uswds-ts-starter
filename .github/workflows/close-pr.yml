@@ -1,0 +1,23 @@
+name: Close PR
+
+on:
+  pull_request:
+    types: [closed]
+
+env:
+  PR_NUMBER: ${{ github.event.number }}
+
+jobs:
+  remove-artifacts:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-west-1
+
+      - name: Remove staging build folder
+        run: aws s3 rm s3://gatsby-uswds-ts-starter/ --exclude "*" --include "$(echo $PR_NUMBER)-*" --recursive
