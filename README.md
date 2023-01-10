@@ -119,6 +119,10 @@ The steps involved with creating i18n content is as follows:
 ### Deployment
 Currently this repo is using Github actions (see [.github/workflows](https://github.com/usds/gatsby-uswds-ts-starter/tree/main/.github/workflows) in the root directory) for deployment to AWS with the support of Geoplatform.
 
+The Github actions currently expect an S3 bucket to exist. When setting up the S3 on AWS, you can specify the name and the region. Each action requires this name and region to be set as environment variables: 
+1. AWS_BUCKET_NAME
+2. AWS_REGION
+
 These actions will
 1. creates a staging link (see [deploy-staging.yml](https://github.com/usds/gatsby-uswds-ts-starter/blob/main/.github/workflows/deploy-staging.yml)) as a comment in every PR made against `main` that passes all checks (type-check, linting, testing, format, commit messages)
 2. update the production folder on AWS
