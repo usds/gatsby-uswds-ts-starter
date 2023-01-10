@@ -210,7 +210,7 @@ exports[`rendering of Layout Component > checks if component renders 1`] = `
             style={{}}
           >
             <div>
-              Your logo title goes here
+              Environmental Justice.gov
             </div>
           </a>
         </div>
@@ -254,29 +254,29 @@ exports[`rendering of Layout Component > checks if component renders 1`] = `
                   onMouseEnter={[Function]}
                   style={{}}
                 >
-                  First page
+                  Scorecard
                 </a>
               </li>
               <li
                 className="usa-nav__primary-item"
               >
                 <a
-                  href="/second-page"
+                  href="/about"
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                 >
-                  Second page
+                  About
                 </a>
               </li>
               <li
                 className="usa-nav__primary-item"
               >
                 <a
-                  href="/third-page"
+                  href="/contact"
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                 >
-                  Third page
+                  Contact
                 </a>
               </li>
             </ul>

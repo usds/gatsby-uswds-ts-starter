@@ -46,7 +46,7 @@ const AppHeader = ({ location }: ILocation) => {
     LOGO_TITLE: (
       <FormattedMessage
         id={`common.nav.LOGO_TITLE`}
-        defaultMessage={`Your logo title goes here`}
+        defaultMessage={`Environmental Justice.gov`}
         description={`Navigate to any page. This is LOGO_TITLE in the header`}
       />
     ),
@@ -60,20 +60,20 @@ const AppHeader = ({ location }: ILocation) => {
     <FormattedMessage
       key={`${PAGE_ENDPOINTS[0]}`}
       id={`common.nav.links.first.page`}
-      defaultMessage={`First page`}
-      description={`the first page nav link`}
+      defaultMessage={`Scorecard`}
+      description={`the Scorecard nav link`}
     />,
     <FormattedMessage
       key={`${PAGE_ENDPOINTS[1]}`}
       id={`common.nav.links.second.page`}
-      defaultMessage={`Second page`}
-      description={`the second page nav link`}
+      defaultMessage={`About`}
+      description={`the About nav link`}
     />,
     <FormattedMessage
       key={`${PAGE_ENDPOINTS[2]}`}
       id={`common.nav.links.third.page`}
-      defaultMessage={`Third page`}
-      description={`the third page nav link`}
+      defaultMessage={`Contact`}
+      description={`the Contact nav link`}
     />,
   ];
 
