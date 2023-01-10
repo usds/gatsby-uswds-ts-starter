@@ -38,9 +38,10 @@ git clone https://github.com/usds/gastby-uswds-ts-starter.git your-project-name
 To start the project locally:
 
 1. Git clone the starter repo (above) in a terminal
-2. If you don't have node 18, install and verify that `node -v` return 18.x. You can use `nvm` or `asdf`
-3. run `nvm use 18`
-4. Ensure that `pnpm` and `gatsby-cli` are globally installed:
+2. run `cd your-project-name`
+3. If you don't have node 18, install and verify that `node -v` return 18.x. You can use `nvm` or `asdf`
+4. run `nvm use 18`
+5. Ensure that `pnpm` and `gatsby-cli` are globally installed:
 
 ```
 $ npm list -g --depth=0
@@ -50,8 +51,8 @@ $ npm list -g --depth=0
 ├── npm@8.19.2
 └── pnpm@7.18.2
 ```
-5. run `pnpm install`
-6. run `pnpm clean && pnpm start`
+6. run `pnpm install`
+7. run `pnpm clean && pnpm start`
 
 Open `http://localhost:8000` with your browser to see the result.
 
@@ -117,6 +118,10 @@ The steps involved with creating i18n content is as follows:
 
 ### Deployment
 Currently this repo is using Github actions (see [.github/workflows](https://github.com/usds/gatsby-uswds-ts-starter/tree/main/.github/workflows) in the root directory) for deployment to AWS with the support of Geoplatform.
+
+The Github actions currently expect an S3 bucket to exist. When setting up the S3 on AWS, you can specify the name and the region. Each action requires this name and region to be set as environment variables: 
+1. AWS_BUCKET_NAME
+2. AWS_REGION
 
 These actions will
 1. creates a staging link (see [deploy-staging.yml](https://github.com/usds/gatsby-uswds-ts-starter/blob/main/.github/workflows/deploy-staging.yml)) as a comment in every PR made against `main` that passes all checks (type-check, linting, testing, format, commit messages)
