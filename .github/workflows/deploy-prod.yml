@@ -6,6 +6,8 @@ on:
 
 env:
   PR_NUMBER: ${{ github.event.number }}
+  AWS_BUCKET_NAME: gatsby-uswds-ts-starter
+  AWS_REGION: us-west-1
 
 jobs:
   run-ci:
@@ -57,23 +59,31 @@ jobs:
           SITE_URL: "${{ secrets.STAGE_SITE_URL }}"
           DEPLOY_PREFIX: "/${{env.DESTINATION_FOLDER}}/"
 
+      - name: Write AWS_REGION to env context
+        run: |
+          echo "AWS_REGION=$(echo $AWS_REGION)" >> $GITHUB_ENV
+
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: us-west-1
+          aws-region: ${{ env.AWS_REGION }}
 
       - name: Deploy to AWS
-        run: aws s3 sync ./public/ s3://gatsby-uswds-ts-starter/${{env.DESTINATION_FOLDER}} --acl public-read --delete
+        run: aws s3 sync ./public/ s3://$AWS_BUCKET_NAME/${{env.DESTINATION_FOLDER}} --acl public-read --delete
       
-      - name: Update PR with staging URL
+      - name: Write AWS_BUCKET_NAME to env context
+        run: |
+          echo "AWS_BUCKET_NAME=$(echo $AWS_BUCKET_NAME)" >> $GITHUB_ENV
+      
+      - name: Update PR with production URL
         uses: mshick/add-pr-comment@v1
         with:
-          # Deploy to S3 for the staging URL
+          # Deploy to S3 for the production URL
           message: |
-            **🚢  Here is the frontend staging link: 🚢**   
-            Find it here: http://gatsby-uswds-ts-starter.s3-website-us-west-1.amazonaws.com/${{env.DESTINATION_FOLDER}} !
+            **🚢  Here is the frontend production link: 🚢**   
+            Find it here: http://${{env.AWS_BUCKET_NAME}}.s3-website.${{env.AWS_REGION}}.amazonaws.com/${{env.DESTINATION_FOLDER}} !
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           repo-token-user-login: "github-actions[bot]" # The user.login for temporary GitHub tokens
           allow-repeats: false # This is the default
