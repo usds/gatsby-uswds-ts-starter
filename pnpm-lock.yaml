@@ -31,7 +31,7 @@ specifiers:
   eslint-import-resolver-typescript: 3.5.3
   eslint-plugin-import: 2.27.5
   eslint-plugin-jsx-a11y: 6.7.1
-  eslint-plugin-n: 15.5.1
+  eslint-plugin-n: 15.6.1
   eslint-plugin-prettier: 4.2.1
   eslint-plugin-promise: 6.1.1
   eslint-plugin-react: 7.31.11
@@ -96,11 +96,11 @@ devDependencies:
   c8: 7.12.0
   eslint: 8.32.0
   eslint-config-prettier: 8.6.0_eslint@8.32.0
-  eslint-config-standard: 17.0.0_jwc65yaoycfytvjg5t7bl6s6y4
+  eslint-config-standard: 17.0.0_xk3uaci65cbvygmsdibcdexy4y
   eslint-import-resolver-typescript: 3.5.3_ps7hf4l2dvbuxvtusmrfhmzsba
   eslint-plugin-import: 2.27.5_bg2lsi4rmo2o43jd7kawyzy65y
   eslint-plugin-jsx-a11y: 6.7.1_eslint@8.32.0
-  eslint-plugin-n: 15.5.1_eslint@8.32.0
+  eslint-plugin-n: 15.6.1_eslint@8.32.0
   eslint-plugin-prettier: 4.2.1_cn4lalcyadplruoxa5mhp7j3dq
   eslint-plugin-promise: 6.1.1_eslint@8.32.0
   eslint-plugin-react: 7.31.11_eslint@8.32.0
@@ -7081,7 +7081,7 @@ packages:
       typescript: 4.9.4
     dev: false
 
-  /eslint-config-standard/17.0.0_jwc65yaoycfytvjg5t7bl6s6y4:
+  /eslint-config-standard/17.0.0_xk3uaci65cbvygmsdibcdexy4y:
     resolution: {integrity: sha512-/2ks1GKyqSOkH7JFvXJicu0iMpoojkwB+f5Du/1SC0PtBL+s8v30k9njRZ21pm2drKYm2342jFnGWzttxPmZVg==}
     peerDependencies:
       eslint: ^8.0.1
@@ -7091,7 +7091,7 @@ packages:
     dependencies:
       eslint: 8.32.0
       eslint-plugin-import: 2.27.5_bg2lsi4rmo2o43jd7kawyzy65y
-      eslint-plugin-n: 15.5.1_eslint@8.32.0
+      eslint-plugin-n: 15.6.1_eslint@8.32.0
       eslint-plugin-promise: 6.1.1_eslint@8.32.0
     dev: true
 
@@ -7319,8 +7319,8 @@ packages:
       semver: 6.3.0
     dev: true
 
-  /eslint-plugin-n/15.5.1_eslint@8.32.0:
-    resolution: {integrity: sha512-kAd+xhZm7brHoFLzKLB7/FGRFJNg/srmv67mqb7tto22rpr4wv/LV6RuXzAfv3jbab7+k1wi42PsIhGviywaaw==}
+  /eslint-plugin-n/15.6.1_eslint@8.32.0:
+    resolution: {integrity: sha512-R9xw9OtCRxxaxaszTQmQAlPgM+RdGjaL1akWuY/Fv9fRAi8Wj4CUKc6iYVG8QNRjRuo8/BqVYIpfqberJUEacA==}
     engines: {node: '>=12.22.0'}
     peerDependencies:
       eslint: '>=7.0.0'
