@@ -47,7 +47,7 @@
     "react-helmet": "6.1.0",
     "react-intl": "6.2.5",
     "react-test-renderer": "18.2.0",
-    "sass": "1.56.2",
+    "sass": "1.57.1",
     "tsconfig-paths-webpack-plugin": "4.0.0"
   },
   "devDependencies": {
