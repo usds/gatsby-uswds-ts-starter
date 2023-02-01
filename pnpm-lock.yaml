@@ -37,7 +37,7 @@ specifiers:
   eslint-plugin-react: 7.31.11
   eslint-plugin-react-hooks: 4.6.0
   gatsby: 5.2.0
-  gatsby-plugin-i18n-l10n: 5.0.1
+  gatsby-plugin-i18n-l10n: 5.2.2
   gatsby-plugin-pnpm: 1.2.10
   gatsby-plugin-sass: 6.3.1
   husky: 8.0.3
@@ -61,7 +61,7 @@ dependencies:
   '@uswds/uswds': 3.3.0
   dotenv: 16.0.3
   gatsby: 5.2.0_to66hmiie7ewnw6ty33gtzq274
-  gatsby-plugin-i18n-l10n: 5.0.1_ikkl64sqiya647fv2oiu7543y4
+  gatsby-plugin-i18n-l10n: 5.2.2_ikkl64sqiya647fv2oiu7543y4
   gatsby-plugin-pnpm: 1.2.10_gatsby@5.2.0
   gatsby-plugin-sass: 6.3.1_gatsby@5.2.0+sass@1.56.2
   react: 18.2.0
@@ -8243,8 +8243,8 @@ packages:
       '@parcel/transformer-json': 2.6.2_@parcel+core@2.6.2
     dev: false
 
-  /gatsby-plugin-i18n-l10n/5.0.1_ikkl64sqiya647fv2oiu7543y4:
-    resolution: {integrity: sha512-d4iB+09bRu503Mf/6AvDmGXmGiQQZ0RCpTKz/FH0rc8w68Hyf68oYtrC922p6bwmfPxpByCMVYzCEPEKxmIs+g==}
+  /gatsby-plugin-i18n-l10n/5.2.2_ikkl64sqiya647fv2oiu7543y4:
+    resolution: {integrity: sha512-z6lXr3w4z0t7YZWQB42ZIKlJWklhNUxSyVRKkZUCkoWNOVMyEOOS76iWBxUz9elN3rzZZ0HvJtJI5fQA4IA3Fw==}
     peerDependencies:
       gatsby: ^5.x
       gatsby-source-filesystem: ^5.x
