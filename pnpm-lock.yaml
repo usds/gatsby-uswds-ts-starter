@@ -6,7 +6,7 @@ specifiers:
   '@commitlint/cli': 17.4.2
   '@commitlint/config-conventional': 17.4.2
   '@formatjs/cli': 5.1.12
-  '@testing-library/dom': 8.19.1
+  '@testing-library/dom': 8.20.1
   '@testing-library/jest-dom': 5.16.5
   '@testing-library/react': 13.4.0
   '@testing-library/react-hooks': 8.0.1
@@ -77,7 +77,7 @@ devDependencies:
   '@babel/preset-typescript': 7.18.6
   '@commitlint/cli': 17.4.2
   '@commitlint/config-conventional': 17.4.2
-  '@testing-library/dom': 8.19.1
+  '@testing-library/dom': 8.20.1
   '@testing-library/jest-dom': 5.16.5
   '@testing-library/react': 13.4.0_biqbaboplfbrettd7655fr4n2y
   '@testing-library/react-hooks': 8.0.1_ukj6e7lljkv3jczigzxc3nf53a
@@ -3801,17 +3801,17 @@ packages:
       defer-to-connect: 2.0.1
     dev: false
 
-  /@testing-library/dom/8.19.1:
-    resolution: {integrity: sha512-P6iIPyYQ+qH8CvGauAqanhVnjrnRe0IZFSYCeGkSRW9q3u8bdVn2NPI+lasFyVsEQn1J/IFmp5Aax41+dAP9wg==}
+  /@testing-library/dom/8.20.1:
+    resolution: {integrity: sha512-/DiOQ5xBxgdYRC8LNk7U+RWat0S3qRLeIw3ZIkMQ9kkVlRmwD/Eg8k8CqIpD6GW7u20JIUOfMKbxtiLutpjQ4g==}
     engines: {node: '>=12'}
     dependencies:
       '@babel/code-frame': 7.18.6
-      '@babel/runtime': 7.18.9
+      '@babel/runtime': 7.20.7
       '@types/aria-query': 5.0.1
-      aria-query: 5.0.0
+      aria-query: 5.1.3
       chalk: 4.1.2
       dom-accessibility-api: 0.5.14
-      lz-string: 1.4.4
+      lz-string: 1.5.0
       pretty-format: 27.5.1
     dev: true
 
@@ -3862,7 +3862,7 @@ packages:
       react-dom: ^18.0.0
     dependencies:
       '@babel/runtime': 7.18.9
-      '@testing-library/dom': 8.19.1
+      '@testing-library/dom': 8.20.1
       '@types/react-dom': 18.0.10
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
@@ -5027,7 +5027,7 @@ packages:
     resolution: {integrity: sha512-Cg7TFGpIr01vOQNODXOOaGz2NpCU5gl8x1qJFbb6hbZxR7XrcE2vtbAsTAbJ7/xwJtUuJEw8K8Zr/AE0LHlesg==}
     engines: {node: '>=10', npm: '>=6'}
     dependencies:
-      '@babel/runtime': 7.18.9
+      '@babel/runtime': 7.20.7
       cosmiconfig: 7.0.1
       resolve: 1.22.1
 
@@ -8165,7 +8165,7 @@ packages:
     resolution: {integrity: sha512-REU+clGHBrNnEBQzVZbVWLRhS059AdNx/843JzqXQO3XrMYkfZoWhL2apQ+ZJSOf6RO3jlSxfBtQ6ULelrvYvA==}
     engines: {node: '>=18.0.0'}
     dependencies:
-      '@babel/runtime': 7.18.9
+      '@babel/runtime': 7.20.7
       ci-info: 2.0.0
       configstore: 5.0.1
       fastq: 1.13.0
@@ -8189,7 +8189,7 @@ packages:
   /gatsby-legacy-polyfills/3.2.0:
     resolution: {integrity: sha512-WsyqpTl9wy2XeCtE8ZN7MOqPbq05JJvvTPY59rHV71oP6BB4QZk6oXsh75GOIzZtDOYDmhiYa26hvA7JDKsMKA==}
     dependencies:
-      '@babel/runtime': 7.18.9
+      '@babel/runtime': 7.20.7
       core-js-compat: 3.9.0
 
   /gatsby-link/5.2.0_a7m4z3ttffxhxhhrb3ph3svjjm:
@@ -10113,8 +10113,8 @@ packages:
       es5-ext: 0.10.61
     dev: false
 
-  /lz-string/1.4.4:
-    resolution: {integrity: sha512-0ckx7ZHRPqb0oUm8zNr+90mtf9DQB60H1wMCjBtfi62Kl3a7JbHob6gA2bC+xRvZoOL+1hzUK8jeuEIQE8svEQ==}
+  /lz-string/1.5.0:
+    resolution: {integrity: sha512-h5bgJWpxJNswbU7qCrV0tIKQCaS3blPDrqKWx+QxzuzL1zGUzij9XCWLrSLsJPu5t+eWA/ycetzYAO5IOMcWAQ==}
     hasBin: true
     dev: true
 
@@ -11659,7 +11659,7 @@ packages:
     peerDependencies:
       react: '>=16.13.1'
     dependencies:
-      '@babel/runtime': 7.18.9
+      '@babel/runtime': 7.20.7
       react: 18.2.0
     dev: true
 
