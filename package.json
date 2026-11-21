@@ -38,7 +38,7 @@
     "@formatjs/cli": "5.1.12",
     "@uswds/uswds": "3.3.0",
     "dotenv": "16.0.3",
-    "gatsby": "5.2.0",
+    "gatsby": "5.9.1",
     "gatsby-plugin-i18n-l10n": "5.2.2",
     "gatsby-plugin-pnpm": "1.2.10",
     "gatsby-plugin-sass": "6.3.1",
